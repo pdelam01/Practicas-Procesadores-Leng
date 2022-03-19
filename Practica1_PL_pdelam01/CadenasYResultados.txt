@@ -1,0 +1,43 @@
+DNI_NIE:	12345678Z Validada
+		X1234567N Validada
+		12345678O No Validada (contiene la O no presente como control)
+		L1234567N No Validada (la primera letra solo puede ser XYZ)
+		L1234567I No Validada (mezcla entre las dos de arriba, la I tampoco es válida)
+
+
+FLOAT:	23.218 	Validada
+		-350.12 	Validada
+		.766 		Validada
+		+25.1e30 	Validada
+		-12.0E-5 	Validada
+		23 		No Validada (no es un número decimal)
+		23..218 	No Validada (contiene mas de un ".")
+
+
+DOMINIO: 	ingenierias.unileon.es 	Validada
+		xx3.lcs.mit.edu 		Validada
+		SRI-NIC.ARPA		Validada
+		SRI----NIC.AR-P-A		Validada (pueden existir varios "-")
+		hola.com-2.es		Validada
+		a.a				Validada
+		a.				No Validada (no puede acabar en ".")
+		a..a				No Validada (no pueden haber varios "." seguidos)
+		agora.2unileon		No Validada (no puede empezar por un número)
+		agora-.unileon		No Validada (solo pueden acabar en caracteres alfanuméricos)
+
+
+EMAIL:	buzon@unileon.es				Validada
+		correo.buzon@estudiantes.unileon.es	Validada
+		@@estudiantes.com				No Validada (no puede contener más que un símbolo "@")
+		hola@estudiantes				No Validada (ha de haber almenos un "." en la segunda parte del correo)
+		hola@estudiantes.				No Validada (no puede acabar solo con ".")
+
+
+IDENTIFICADOR:	variable1	Validada
+			SUMatorio 	Validada
+			_acumulador	Validada 
+			x 		Validada
+			a1		Validada
+			1var 		No Validada (no puede comenzar por un número)
+			var+iable	No Validada (solo se pueden encontrar letras, números y "_")
+			$variable	No Validada (misma razón anterior)
