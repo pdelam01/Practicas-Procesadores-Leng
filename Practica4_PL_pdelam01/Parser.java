@@ -97,7 +97,7 @@ public class Parser {
             match("LEFT_BRACKET");
             E();
             match("RIGHT_BRACKET");
-        } else if (currentToken.getTypeToken().equals("INTEGER")) {
+        } else {
             match("INTEGER");
         }
     }
@@ -114,7 +114,7 @@ public class Parser {
             System.out.println("[Parser] ("+currentToken.getTypeToken()+", " + currentToken.getLexema()+") OK");
             nextToken();
         } else {
-            currentToken.errorMatch();
+            currentToken.errorMatch(token);
             System.exit(-1);
         }
     }
