@@ -11,9 +11,9 @@ public class Yytoken {
         this.column = column;
     }
 
-    public void errorMatch() {
+    public void errorMatch(String str) {
         System.out.println("[PARSER] Encontrado token de tipo " + typeToken + " (línea " + line + ", columna " + column + ")\n"+
-                "Se esperaba un token de tipo "+typeToken);
+                "Se esperaba un token de tipo "+str+" y ha llegado uno de tipo "+typeToken);
     }
 
     public String getTypeToken() {
@@ -32,3 +32,4 @@ public class Yytoken {
         return column;
     }
 }
+
