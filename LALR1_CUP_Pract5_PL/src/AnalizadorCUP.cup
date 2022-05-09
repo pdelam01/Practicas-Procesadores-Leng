@@ -1,0 +1,65 @@
+import java_cup.runtime.*;
+
+parser code {:
+    public static void main(String[] argv){
+        if (argv.length == 0) {
+            System.out.println("Uso : java Parser <inputfile)>");
+        }else{
+            try {
+                java.io.FileInputStream stream = new java.io.FileInputStream(argv[0]);
+                java.io.Reader reader = new java.io.InputStreamReader(stream);
+                /* Crea un objeto parser */
+                Parser parserObj = new Parser();
+                /* Asigna el Scanner */
+                Scanner analizadorLexico = new AnalizadorSintAsc(reader);
+
+                parserObj.setScanner(analizadorLexico);
+                parserObj.parse();
+            } catch(Exception x) {
+                System.out.println("Error fatal.");
+            }
+
+        }
+    }
+:};
+
+
+/* Inicializacion del analizador lexico si procede */
+//init with {: s.init(); :};
+//scan with {: return this.getScanner().next_token(); :};
+
+/* Terminals (tokens returned by the scanner). */
+terminal PLUS, MINUS, TIMES, DIV, POW, SQRT, LEFT_BRACKET, RIGHT_BRACKET, SEMICOLON, UMINUS;
+
+/* Terminales con atributo */
+terminal double REAL;
+
+/* Non terminals */
+non terminal expr_list;
+
+/* No terminales con atributo*/
+non terminal Double expr;      //used to store evaluated subexpressions
+
+/* Precedences */
+precedence left PLUS, MINUS;
+precedence left TIMES, DIV;
+precedence left UMINUS;
+
+precedence right POW;
+
+precedence nonassoc SQRT;
+
+/* The grammar rules */
+expr_list ::=   expr_list expr:e SEMICOLON        {: System.out.println("= " + e); :}
+                 | expr_list error SEMICOLON
+                 | /* Epsilon */ ;
+
+expr      ::=   expr:e1 PLUS expr:e2                        {: RESULT = new Double(e1.doubleValue() + e2.doubleValue());   :}
+                 | expr:e1 MINUS expr:e2                    {: RESULT = new Double(e1.doubleValue() - e2.doubleValue());   :}
+                 | expr:e1 TIMES expr:e2                    {: RESULT = new Double(e1.doubleValue() * e2.doubleValue());   :}
+                 | expr:e1 DIV expr:e2                      {: RESULT = new Double(e1.doubleValue() / e2.doubleValue());   :}
+                 | expr:e1 POW expr:e2                      {: RESULT = Math.pow(e1,e2); :}
+                 | SQRT RIGHT_BRACKET expr:e1 LEFT_BRACKET  {: RESULT = Math.sqrt(e1);  :}
+                 | LEFT_BRACKET expr:e RIGHT_BRACKET        {: RESULT = e; :}
+                 | MINUS expr:e                             {: RESULT= new Double(0-e.doubleValue()); :} %prec UMINUS
+                 | REAL:n                                   {: RESULT = n;  :} ;
