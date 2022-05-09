@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Practica1_PL_pdelam01/Practica1_PL_pdelam01.iml" filepath="$PROJECT_DIR$/Practica1_PL_pdelam01/Practica1_PL_pdelam01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Practica2_PL_pdelam01/Practica2_PL_pdelam01.iml" filepath="$PROJECT_DIR$/Practica2_PL_pdelam01/Practica2_PL_pdelam01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Practica3_PL_pdelam01/Practica3_PL_pdelam01.iml" filepath="$PROJECT_DIR$/Practica3_PL_pdelam01/Practica3_PL_pdelam01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Practicas-Procesadores-Leng.iml" filepath="$PROJECT_DIR$/Practicas-Procesadores-Leng.iml" />
+    </modules>
+  </component>
+</project>

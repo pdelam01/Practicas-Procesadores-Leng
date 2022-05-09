@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Ejecutables">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/Practica2_PL_pdelam01/Ejecutables/Ejercicio5_Pract2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Practica2_PL_pdelam01/Ejecutables/Ejercicio1_Pract2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Practica2_PL_pdelam01/Ejecutables/Ejercicio2_Pract2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Practica2_PL_pdelam01/Ejecutables/Ejercicio3_Pract2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Practica2_PL_pdelam01/Ejecutables/Ejercicio4_Pract2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
