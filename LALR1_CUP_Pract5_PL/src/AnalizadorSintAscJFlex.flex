@@ -19,7 +19,7 @@ OP_MULTIPLICACION = \*
 OP_DIVISION = \/
 OP_ELEVADO = \^
 OP_RAIZ = sqrt
-REAL = [-+]?[\d]*[.][\d]+([eE][-]?)?[\d]*
+REAL = \d+(\.?\d+)?([eE]-?\d+)? //
 SEMICOLON = \;
 
 Space = " "+
@@ -66,7 +66,7 @@ Intro = \n+
 }
 {OP_RAIZ} {
     System.out.println("[LEX] (operador, '"+yytext()+"')"+ " linea: "+(yyline+1)+" columna: "+(yycolumn+1));
-    return new Symbol(sym.SQRT, yyline , yycolumn);
+    return new Symbol(sym.SQRTP, yyline , yycolumn);
 }
 
 [ \t\r\n]+ {;}

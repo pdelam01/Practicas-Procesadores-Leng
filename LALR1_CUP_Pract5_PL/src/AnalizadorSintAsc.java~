@@ -112,11 +112,11 @@ class AnalizadorSintAsc implements java_cup.runtime.Scanner {
 
   private static final String ZZ_ACTION_PACKED_0 =
     "\1\0\1\1\1\2\1\3\1\4\1\5\1\6\1\7"+
-    "\1\1\1\10\1\1\1\11\1\12\1\1\2\0\1\13"+
-    "\1\0\1\13\1\0\1\13\1\14";
+    "\1\10\1\11\1\12\1\13\1\1\3\0\1\11\1\0"+
+    "\1\11\1\0\1\14";
 
   private static int [] zzUnpackAction() {
-    int [] result = new int[22];
+    int [] result = new int[21];
     int offset = 0;
     offset = zzUnpackAction(ZZ_ACTION_PACKED_0, offset, result);
     return result;
@@ -141,12 +141,12 @@ class AnalizadorSintAsc implements java_cup.runtime.Scanner {
   private static final int [] ZZ_ROWMAP = zzUnpackRowMap();
 
   private static final String ZZ_ROWMAP_PACKED_0 =
-    "\0\0\0\22\0\44\0\22\0\22\0\22\0\66\0\66"+
-    "\0\110\0\22\0\66\0\22\0\22\0\132\0\110\0\66"+
-    "\0\154\0\176\0\220\0\242\0\264\0\22";
+    "\0\0\0\22\0\44\0\22\0\22\0\22\0\22\0\22"+
+    "\0\22\0\66\0\22\0\22\0\110\0\132\0\154\0\176"+
+    "\0\220\0\242\0\242\0\264\0\22";
 
   private static int [] zzUnpackRowMap() {
-    int [] result = new int[22];
+    int [] result = new int[21];
     int offset = 0;
     offset = zzUnpackRowMap(ZZ_ROWMAP_PACKED_0, offset, result);
     return result;
@@ -170,11 +170,11 @@ class AnalizadorSintAsc implements java_cup.runtime.Scanner {
 
   private static final String ZZ_TRANS_PACKED_0 =
     "\1\2\1\3\1\0\1\4\1\5\1\6\1\7\1\10"+
-    "\1\11\1\12\1\13\1\14\1\2\1\15\2\2\1\16"+
-    "\1\2\23\0\1\3\30\0\1\17\1\0\1\20\21\0"+
-    "\1\21\25\0\1\22\15\0\1\21\1\0\1\23\24\0"+
-    "\1\24\11\0\1\25\2\0\1\25\30\0\1\26\12\0"+
-    "\1\25\7\0";
+    "\1\2\1\11\1\12\1\13\1\2\1\14\2\2\1\15"+
+    "\1\2\23\0\1\3\30\0\1\16\1\0\1\12\1\0"+
+    "\1\17\23\0\1\20\15\0\1\21\16\0\1\22\2\0"+
+    "\1\23\26\0\1\24\14\0\1\21\1\0\1\17\17\0"+
+    "\1\23\30\0\1\25";
 
   private static int [] zzUnpackTrans() {
     int [] result = new int[198];
@@ -220,11 +220,11 @@ class AnalizadorSintAsc implements java_cup.runtime.Scanner {
   private static final int [] ZZ_ATTRIBUTE = zzUnpackAttribute();
 
   private static final String ZZ_ATTRIBUTE_PACKED_0 =
-    "\1\0\1\11\1\1\3\11\3\1\1\11\1\1\2\11"+
-    "\1\1\2\0\1\1\1\0\1\1\1\0\1\1\1\11";
+    "\1\0\1\11\1\1\6\11\1\1\2\11\1\1\3\0"+
+    "\1\1\1\0\1\1\1\0\1\11";
 
   private static int [] zzUnpackAttribute() {
-    int [] result = new int[22];
+    int [] result = new int[21];
     int offset = 0;
     offset = zzUnpackAttribute(ZZ_ATTRIBUTE_PACKED_0, offset, result);
     return result;
@@ -753,26 +753,26 @@ class AnalizadorSintAsc implements java_cup.runtime.Scanner {
             // fall through
           case 20: break;
           case 9:
-            { System.out.println("[LEX] (fin sentencia, '"+yytext()+"')"+ " linea: "+(yyline+1)+" columna: "+(yycolumn+1));
-    return new Symbol(sym.SEMICOLON, yyline , yycolumn);
+            { System.out.println("[LEX] (real, '"+yytext()+"')"+ " linea: "+(yyline+1)+" columna: "+(yycolumn+1));
+    return new Symbol(sym.REAL, yyline, yycolumn, new Double(yytext()));
             }
             // fall through
           case 21: break;
           case 10:
-            { System.out.println("[LEX] (operador, '"+yytext()+"')"+ " linea: "+(yyline+1)+" columna: "+(yycolumn+1));
-    return new Symbol(sym.POW, yyline , yycolumn);
+            { System.out.println("[LEX] (fin sentencia, '"+yytext()+"')"+ " linea: "+(yyline+1)+" columna: "+(yycolumn+1));
+    return new Symbol(sym.SEMICOLON, yyline , yycolumn);
             }
             // fall through
           case 22: break;
           case 11:
-            { System.out.println("[LEX] (real, '"+yytext()+"')"+ " linea: "+(yyline+1)+" columna: "+(yycolumn+1));
-    return new Symbol(sym.REAL, yyline, yycolumn, new Double(yytext()));
+            { System.out.println("[LEX] (operador, '"+yytext()+"')"+ " linea: "+(yyline+1)+" columna: "+(yycolumn+1));
+    return new Symbol(sym.POW, yyline , yycolumn);
             }
             // fall through
           case 23: break;
           case 12:
             { System.out.println("[LEX] (operador, '"+yytext()+"')"+ " linea: "+(yyline+1)+" columna: "+(yycolumn+1));
-    return new Symbol(sym.SQRT, yyline , yycolumn);
+    return new Symbol(sym.SQRTP, yyline , yycolumn);
             }
             // fall through
           case 24: break;

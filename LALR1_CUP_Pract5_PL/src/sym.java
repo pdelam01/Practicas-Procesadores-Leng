@@ -7,18 +7,19 @@
 public interface sym {
   /* terminals */
   public static final int MINUS = 3;
+  public static final int UPLUS = 12;
   public static final int POW = 6;
   public static final int UMINUS = 11;
   public static final int EOF = 0;
   public static final int PLUS = 2;
   public static final int RIGHT_BRACKET = 9;
   public static final int DIV = 5;
-  public static final int REAL = 12;
+  public static final int REAL = 13;
   public static final int error = 1;
   public static final int SEMICOLON = 10;
   public static final int LEFT_BRACKET = 8;
   public static final int TIMES = 4;
-  public static final int SQRT = 7;
+  public static final int SQRTP = 7;
   public static final String[] terminalNames = new String[] {
   "EOF",
   "error",
@@ -27,11 +28,12 @@ public interface sym {
   "TIMES",
   "DIV",
   "POW",
-  "SQRT",
+  "SQRTP",
   "LEFT_BRACKET",
   "RIGHT_BRACKET",
   "SEMICOLON",
   "UMINUS",
+  "UPLUS",
   "REAL"
   };
 }
